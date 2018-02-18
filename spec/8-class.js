@@ -41,9 +41,9 @@ describe('class', () => {
             /* TODO : compléter le fichier src/rectangle.js */
             const r = new Rectangle(10, 5);
             
-            since('error').expect(r.width).toBe(10);
-            since('error').expect(r.height).toBe(5);
-            since('error').expect(r.area).toBe(50);
+            expect(r.width).toBe(10);
+            expect(r.height).toBe(5);
+            expect(r.area).toBe(50);
             expect(Rectangle.sayHello('jim')).toBe('hello jim');
         });
 });
