@@ -1,5 +1,3 @@
-// Ne plus utiliser le mot-clé function
-
 describe('Arrow function', () => {
 
     it('typeof', () => {
