@@ -36,6 +36,7 @@ import { test as myTest, a } from 'File1.js';
 import func from 'File1.js';
 // import { privateFunc } from 'File1.js' -> erreur la fonction n'a pas été exportée
 
+// test() -> error: test is not defined
 myTest(); // affiche 'test'
 console.log(a); // affiche 3
 func(); // affiche 'export default from File1'
