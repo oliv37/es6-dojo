@@ -1,22 +1,4 @@
 describe('Const-Let ES6', function() {
-    
-    it('const object', function() {
-        const obj = {
-            a: 1,
-            b: 2
-        };
-
-        // TODO : enlever un fail
-        try {
-            obj.a = 3;
-            // fail();
-        } catch (e) {
-            fail();
-        }
-
-        // A enlever
-        since('error').expect(obj.a).toBe(3);
-    });
 
     it('if block with var', function() {
         if (true) {
@@ -75,6 +57,24 @@ describe('Const-Let ES6', function() {
         } catch(e) {
             // fail();
         }
+    });
+
+    it('const object', function() {
+        const obj = {
+            a: 1,
+            b: 2
+        };
+
+        // TODO : enlever un fail
+        try {
+            obj.a = 3;
+            // fail();
+        } catch (e) {
+            fail();
+        }
+
+        // A enlever
+        since('error').expect(obj.a).toBe(3);
     });
 
 });
