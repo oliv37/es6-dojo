@@ -34,7 +34,7 @@ export default function() {
 ```javascript
 import { test as myTest, a } from 'File1.js';
 import func from 'File1.js';
-// import { privateFunc } from 'File1.js' -> error
+// import { privateFunc } from 'File1.js' -> erreur la fonction n'a pas été exportée
 
 myTest(); // affiche 'test'
 console.log(a); // affiche 3
@@ -93,8 +93,8 @@ console.log(b); // 3
 *Avec des objets*
 ```javascript
 const obj= {
-	name: 'john'
-	age: 10
+  name: 'john'
+  age: 10
 };
 const { name } = obj;
 
@@ -104,8 +104,8 @@ console.log(name); // john
 
 ```javascript
 const obj= {
-	name: 'john'
-	age: 10
+  name: 'john'
+  age: 10
 };
 const { name: s } = obj;
 
@@ -115,19 +115,19 @@ console.log(s); // john
 
 ```javascript
 const obj= {
-	name: 'john',
-	age: 10
+  name: 'john',
+  age: 10
 };
 
 function printName({ name }) {
-	console.log(name);
+  console.log(name);
 }
 printName(obj); // john
 ```
 
 ```javascript
 function printName({ name, age = 5 }) {
-	console.log(name + ' ' + age);
+  console.log(name + ' ' + age);
 }
 printName({ name: 'john' }); // john 5
 ```
@@ -139,7 +139,7 @@ printName({ name: 'john' }); // john 5
 const arr = [1, 2, 3];
 
 function func(a, b, c) {
-	return a + b + c;
+  return a + b + c;
 }
 
 console.log(func(...arr)); // 6
@@ -166,4 +166,37 @@ console.log(obj2); // {a: 1, b: 4, c: 2}
 const obj3 = {...obj1, a: 2};
 console.log(obj2); // {a: 2, b: 4}
 ```
+### Rest
 
+```javascript
+  function func(...args) {
+	return args;
+  }
+  
+  func(1, 2, 3, 4); // [1, 2, 3, 4];
+```
+
+```javascript
+  function func(a, ...args) {
+    console.log(a); // 1
+    console.log(args); // [2, 3, 4]
+  }
+  
+  func(1, 2, 3, 4);
+```
+
+*`Destructuring` and `Rest`*
+
+```javascript
+  const [a, b, ...rest] = [10, 20, 30, 40, 50];
+  console.log(a); // 10
+  console.log(b); // 20
+  console.log(rest); // [30, 40, 50]
+```
+
+```javascript
+  const obj = {a: 2, b: 4, c: 10};
+  const {b, ...rest} = obj;
+  console.log(b); // 4
+  console.log(rest); // {a: 2, c: 10}
+```
