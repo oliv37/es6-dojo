@@ -16,17 +16,17 @@ Ouvrez 2 onglets :
 *File1.js*
 ```javascript
 export function test() {
-	console.log('test');
+  console.log('test');
 }
 
 function privateFunc() {
-	console.log('private');
+  console.log('private');
 }
 
 export var a = 3;
 
 export default function() {
-	console.log('export default from File1');
+  console.log('export default from File1');
 }
 ```
 \
@@ -43,10 +43,10 @@ func(); // affiche 'export default from File1'
 ### Const / Let
 
 ```javascript
-if(true) {
-	const a = 3;
-	console.log(a); // 3
-	// on ne peut écrire : a = 4; 
+if (true) {
+  const a = 3;
+  console.log(a); // 3
+  // on ne peut écrire : a = 4; 
 }
 
 console.log(a); // undefined
