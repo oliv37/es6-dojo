@@ -169,34 +169,34 @@ console.log(obj2); // {a: 2, b: 4}
 ### Rest
 
 ```javascript
-  function func(...args) {
-	return args;
-  }
+function func(...args) {
+  return args;
+}
   
-  func(1, 2, 3, 4); // [1, 2, 3, 4];
+func(1, 2, 3, 4); // [1, 2, 3, 4];
 ```
 
 ```javascript
-  function func(a, ...args) {
-    console.log(a); // 1
-    console.log(args); // [2, 3, 4]
-  }
+function func(a, ...args) {
+  console.log(a); // 1
+  console.log(args); // [2, 3, 4]
+}
   
-  func(1, 2, 3, 4);
+func(1, 2, 3, 4);
 ```
 
 *`Destructuring` and `Rest`*
 
 ```javascript
-  const [a, b, ...rest] = [10, 20, 30, 40, 50];
-  console.log(a); // 10
-  console.log(b); // 20
-  console.log(rest); // [30, 40, 50]
+const [a, b, ...rest] = [10, 20, 30, 40, 50];
+console.log(a); // 10
+console.log(b); // 20
+console.log(rest); // [30, 40, 50]
 ```
 
 ```javascript
-  const obj = {a: 2, b: 4, c: 10};
-  const {b, ...rest} = obj;
-  console.log(b); // 4
-  console.log(rest); // {a: 2, c: 10}
+const obj = {a: 2, b: 4, c: 10};
+const {b, ...rest} = obj;
+console.log(b); // 4
+console.log(rest); // {a: 2, c: 10}
 ```
