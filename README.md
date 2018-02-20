@@ -236,16 +236,16 @@ fn(); // false
 
 Une seule instruction (pas besoin du mot-clé `return`) :
 ```javascript
-const func = () => "foo"
+const func = () => "foo";
 func(); // retourne "foo"
 ```
 
 Sur plusieurs lignes avec des crochets :
 ```javascript
 const func2 = (param) => {
-const foo = `foo`;
-return foo + param;
-  }
+  const foo = `foo`;
+  return foo + param;
+};
 ```
 
 En tant que paramètre d'une fonction (avec un seul argument, pas besoin de parenthèses)
@@ -263,7 +263,7 @@ const a = {
   fn: () => this.c
 };
 
-console.log(a.fn()) // undefined
+console.log(a.fn()); // undefined
 ```
 
 ```javascript
@@ -272,7 +272,7 @@ const a = {
   fn: function(){ return this.c; }
 };
 
-console.log(a.fn()) // undefined
+console.log(a.fn()); // undefined
 ```
 Seul le mot-clé`function` définit un nouveau contexte d'exécution.
 Pour déterminer la valeur de `this`, il faut regarder dans quel contexte la fonction a été appelée.
