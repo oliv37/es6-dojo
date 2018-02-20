@@ -201,3 +201,105 @@ const {b, ...rest} = obj;
 console.log(b); // 4
 console.log(rest); // {a: 2, c: 10}
 ```
+### This
+
+* Dans le contexte global (et dans un navigateur)
+```javascript
+this === window // true
+```
+* En tant que méthode d'un objet, `this` fait référence à l'objet (qui est lui-même propriétaire de la méthode)
+```javascript
+var obj = {
+  a: 2,
+  func: function() {
+	return this.a;
+  }
+};
+
+obj.func() === 2; // true
+```
+La valeur de `this' dépend du contexte d'exécution de la fonction
+
+```javascript
+var obj = {
+  a: 2,
+  func: function() {
+	return this.a;
+  }
+};
+
+const fn = obj.func;
+fn(); // false
+```
+
+### Arrow function
+
+Une seule instruction (pas besoin du mot-clé `return`) :
+```javascript
+const func = () => "foo"
+func(); // retourne "foo"
+```
+
+Sur plusieurs lignes avec des crochets :
+```javascript
+const func2 = (param) => {
+const foo = `foo`;
+return foo + param;
+  }
+```
+
+En tant que paramètre d'une fonction (avec un seul argument, pas besoin de parenthèses)
+```javascript
+const arr = [1,2,3].forEach(i => i * 2);
+console.log(arr); // [2, 4, 6]
+```
+
+Les arrow functions ne définisse pas la notion de `this`, ainsi dans une arrow function `this` fait référence au contexte englobant
+
+
+```javascript
+const a = {
+  c: 5,
+  fn: () => this.c
+};
+
+console.log(a.fn()) // undefined
+```
+
+```javascript
+const a = {
+  c: 5,
+  fn: function(){ return this.c; }
+};
+
+console.log(a.fn()) // undefined
+```
+Seul le mot-clé`function` définit un nouveau contexte d'exécution.
+Pour déterminer la valeur de `this`, il faut regarder dans quel contexte la fonction a été appelée.
+
+**Attention** à l'utilisation de `this` dans les arrow functions
+
+### Classes
+
+```javascript
+class Employee {
+  constructor(name, firstName) {
+    this.name= name;
+    this.firstName= firstName;
+  }
+
+  get fullName() {
+    return this.firstName + ' ' + this.name
+  }
+
+  printName() {
+    console.log(this.name);
+  }
+}
+
+const e = new Employee ('smith', 'john');
+console.log(e.name); // smith
+console.log(e.fullName); // john smith
+e.printName(); // smith
+```
+Possibilité d'écrire les getters/setters avec `get` et `set`

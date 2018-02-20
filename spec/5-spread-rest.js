@@ -59,10 +59,14 @@ describe('Spread Rest', function() {
 
     it('rest function parameters', function() {
         const [a, ...rest] = [1, 2, 3, 4, 5];
+        function fn(...args) {
+            return args;
+        }
 
         // A enlever
         expect(a).toBe(1);
         expect(rest).toEqual([2, 3, 4, 5]);
+        expect(fn()).toEqual([]);
     });
 
     it('rest join', function() {
