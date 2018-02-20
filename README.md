@@ -272,7 +272,7 @@ const a = {
   fn: function(){ return this.c; }
 };
 
-console.log(a.fn()); // undefined
+console.log(a.fn()); // 5
 ```
 Seul le mot-clé`function` définit un nouveau contexte d'exécution.
 Pour déterminer la valeur de `this`, il faut regarder dans quel contexte la fonction a été appelée.
