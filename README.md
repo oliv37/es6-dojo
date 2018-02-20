@@ -212,7 +212,7 @@ this === window // true
 var obj = {
   a: 2,
   func: function() {
-	return this.a;
+	  return this.a;
   }
 };
 
