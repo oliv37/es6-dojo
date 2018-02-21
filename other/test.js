@@ -21,3 +21,8 @@ console.log(a);
 
 function t(...args) { console.log(args)}
 t();
+
+const add = (a, b) => a + b;
+const add2 = add.bind(null, 2);
+
+console.log(add2(4));

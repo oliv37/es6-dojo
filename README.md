@@ -256,6 +256,8 @@ console.log(arr); // [2, 4, 6]
 
 Les arrow functions ne définisse pas la notion de `this`, ainsi dans une arrow function `this` fait référence au contexte englobant
 
+The this value inside an arrow function is the same as the this value outside of it.
+
 
 ```javascript
 const a = {
@@ -303,3 +305,31 @@ console.log(e.fullName); // john smith
 e.printName(); // smith
 ```
 Possibilité d'écrire les getters/setters avec `get` et `set`
+
+### Autres
+
+* Paramètres par défaut
+```javascript
+function fn(a = 0, b = 1) {
+  return a + b;
+}
+
+fn(3, 4); // ????
+fn(3); // ????
+fn(); // ????
+
+// l'équivalent avec arrow function
+const fn = (a = 0, b = 0) => a + b;
+```
+
+```javascript
+function fn(str, nb = str.length) {
+  return str + '!'.repeat(nb);
+}
+
+fn('test', 6); // ????
+fn('test'); // ????
+
+// l'équivalent avec arrow function
+const fn = (str, nb = str.length) => str + '!'.repeat(nb);
+```

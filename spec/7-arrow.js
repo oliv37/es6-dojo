@@ -7,16 +7,6 @@ describe('Arrow function', () => {
         since('error').expect(typeof mult).toBe('function');
     });
 
-    it('map reduce', () => {
-        const inputs = ["Hello", "arrow", "functions"];
-
-        // TODO : A enlever
-        const str = inputs.map(s => s.charAt(0))
-                          .reduce((acc, current) => acc + current, '');
-
-        expect(str).toBe('Haf');
-    });
-
     it('function declaration', () => {
         // TODO : à compléter
         const add2 = nb => nb + 2;
