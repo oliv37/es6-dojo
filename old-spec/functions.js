@@ -17,6 +17,7 @@ describe("3 - Functions", function () {
 			return 'good';
 		}
 	});
+	
 
 	it("fct4 - fct3 not visible", function () {
 		var result = fct3();
